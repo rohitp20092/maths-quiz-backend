@@ -14,7 +14,10 @@ app.use(cors(corsOptions));
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: corsOptions,
+  cors: {
+    origin: "https://maths-quiz-frontend.vercel.app",
+    methods: ["GET", "POST"],
+  },
 });
 
 // Problem Generation Utility
