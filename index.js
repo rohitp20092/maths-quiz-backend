@@ -6,11 +6,10 @@ const cors = require("cors");
 const app = express();
 
 const corsOptions = {
-  origin: "*", // Frontend URL
+  origin: ["https://maths-quiz-frontend.vercel.app"], // Frontend URL
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-
 app.use(cors(corsOptions));
 
 const server = http.createServer(app);
